@@ -3,18 +3,19 @@ My easy Transfer
 
 Based on synyster0fa7x's work.
 
-5 day project : 1 for discovering µ-MVC / 4 Other for build a website allowing to easily transfer your files ( just like wetransfer site ).
+5 day project : 1 for discovering µ-MVC / 4 Other for build a website allowing to easily transfer your files. ( just like wetransfer site )
 
-Devellopped with *PierreHermey & Trelanor* (Front) / *DuronStacy & psaulay* (Back).
+Devellopped with PierreHermey & Trelanor (Front) / DuronStacy & psaulay (Back).
 
 ## Point of exercise :
 We were on a work situation, dealing with a fake customers for build him a file transfer website. 
 
-##Fonctionalities : 
+## Fonctionalities : 
 - Allow you to easily share you file.
 - You will receive a copy of the sended mail. 
 - Avoid the zip problems.
 -Our designer are proud of their logo, please send the some cookies to encourage them. //troll 
+
 
 
 

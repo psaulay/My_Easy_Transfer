@@ -1,0 +1,58 @@
+{% extends "base.html.twig" %} 
+
+{% block content %}
+    <h1>Add a file</h1>
+
+    <form method="POST" action="{{ url('file/add') }}" enctype="multipart/form-data" id="upload_form">
+        <input type="text" name="creator_email" class="form-control" placeholder="Votre email">
+        <input type="text" name="recipient_email" class="form-control" placeholder="Email du destinataire">
+        <input type="file" name="uploaded_file" id="uploaded_file" onchange="uploadFile()"> 
+        <input type="text" name="creator_message" class="form-control" placeholder="Entrez votre message ici">
+        <input type="submit" class="form-control btn-success" value="Validate">
+    </form>
+    <progress id="progressBar" value="0" max="100" style="width:100%"></progress>
+    <h3 id="status"></h3>
+    <p id="loaded_n_total"></p>
+
+
+
+    <script type="text/javascript">
+        function _(el) {
+        return document.getElementById(el);
+        }
+
+        function uploadFile() {
+        var file = _("uploaded_file").files[0];
+        // alert(file.name+" | "+file.size+" | "+file.type);
+        var formdata = new FormData();
+        formdata.append("uploaded_file", file);
+        var ajax = new XMLHttpRequest();
+        ajax.upload.addEventListener("progress", progressHandler, false);
+        ajax.addEventListener("load", completeHandler, false);
+        ajax.addEventListener("error", errorHandler, false);
+        ajax.addEventListener("abort", abortHandler, false);
+        ajax.open("POST", "file_upload_parser.php");
+        ajax.send(formdata);
+        }
+
+        function progressHandler(event) {
+        _("loaded_n_total").innerHTML = "Uploaded " + event.loaded + " bytes of " + event.total;
+        var percent = (event.loaded / event.total) * 100;
+        _("progressBar").value = Math.round(percent);
+        _("status").innerHTML = Math.round(percent) + "% uploaded... please wait";
+        }
+
+        function completeHandler(event) {
+        _("status").innerHTML = event.target.responseText;
+        _("progressBar").value = 100; //wil clear progress bar after successful upload
+        }
+
+        function errorHandler(event) {
+        _("status").innerHTML = "Upload Failed";
+        }
+
+        function abortHandler(event) {
+        _("status").innerHTML = "Upload Aborted";
+        }        
+    </script>
+{% endblock %}

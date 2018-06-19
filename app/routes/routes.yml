@@ -1,0 +1,20 @@
+- path: 
+  - /file/delete/(\d+)
+  - /files/delete/(\d+)
+  controller: Controllers\FileController::delete
+
+- path:
+  - /files/download_page/(\d+)
+  controller: Controllers\FileController::download
+
+- path: 
+  - /file/add
+  controller: Controllers\FileController::add
+
+- path:
+    - 
+    - /files
+    - /files/
+    - /file
+    - /file/
+  controller: Controllers\FileController::index

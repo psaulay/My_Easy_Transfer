@@ -1,0 +1,59 @@
+body {
+    background: url(../img/background.jpg);
+    background-size: fixed;
+    background-repeat: no-repeat;
+    font-family: Arial, sans-serif;
+    font-variant: small-caps;
+}
+
+img{
+    width: 40%;
+}
+
+.box_container{
+    background: $white;
+    box-shadow: 2px 2px 5px black, -2px -2px 5px black;
+} 
+
+.btn-success{
+	background-color: $red;
+	border: none;
+	width: 50%;
+	margin: auto;
+}
+
+.btn-success:hover{
+	background-color: $redHover !important;
+}
+
+.form-control{
+    border-radius: 0rem;
+    margin-top: 6%;
+    font-variant: small-caps!important;
+}
+
+input{
+    height: 50px;
+}
+#conteneurFile{
+    background: $red;
+}
+
+#conteneurFile .inputFile{
+    opacity : 0; /* for !IE */
+    filter : alpha(opacity=0); /* for IE */
+    position : absolute;
+    right : 0;
+    top : 0;
+}
+#conteneurFile .inputText{
+    border : none;
+    width: 75%;
+    font-variant: small-caps!important;
+    padding: 0.375rem 0.75rem;
+    background : $white;
+}
+
+#conteneurFile span{
+    color: $white;
+}

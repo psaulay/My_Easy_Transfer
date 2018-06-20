@@ -5,7 +5,7 @@ var sass = require('gulp-sass');
 var sourcemaps = require('gulp-sourcemaps');
  
 gulp.task('sass', function () {
-  return gulp.src('./assets/sass/**/*.scss')
+  return gulp.src('./assets/sass/main.scss')
     .pipe(sourcemaps.init())
     .pipe(sass({includePaths: ['node_modules']}).on('error', sass.logError))
     .pipe(sourcemaps.write())

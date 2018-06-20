@@ -1,58 +1,38 @@
 {% extends "base.html.twig" %} 
 
 {% block content %}
-    <h1>Add a file</h1>
+    <div class="row">
+        <form  class="col-lg-5" method="POST" action="{{ url('file/add') }}" enctype="multipart/form-data" id="upload_form">
 
-    <form method="POST" action="{{ url('file/add') }}" enctype="multipart/form-data" id="upload_form">
-        <input type="text" name="creator_email" class="form-control" placeholder="Votre email">
-        <input type="text" name="recipient_email" class="form-control" placeholder="Email du destinataire">
-        <input type="file" name="uploaded_file" id="uploaded_file" onchange="uploadFile()"> 
-        <input type="text" name="creator_message" class="form-control" placeholder="Entrez votre message ici">
-        <input type="submit" class="form-control btn-success" value="Validate">
-    </form>
-    <progress id="progressBar" value="0" max="100" style="width:100%"></progress>
-    <h3 id="status"></h3>
-    <p id="loaded_n_total"></p>
+            <!--<input type="file" name="uploaded_file" id="uploaded_file" onchange="uploadFile()">-->
 
+            <fieldset id="conteneurFile">
+            <input id="input_text_file" class="inputText" readonly="readonly" type="text" placeholder="Nom du fichier..."/>
+            <input onmousedown="return false" onkeydown="return false" class="inputFile" onchange="document.getElementById('input_text_file').value = this.value; uploadFile()" type="file" name="uploaded_file" id="uploaded_file"/> 
+            <span>Parcourir</span> 
+            </fieldset>
+            
+            <input type="text" name="recipient_email" class="form-control" placeholder="Email du destinataire...">
+            <input type="text" name="creator_email" class="form-control" placeholder="Email de l'emetteur... (Optionnel)">
 
+            <input type="text" name="creator_message" class="form-control" placeholder="Votre message...">
 
-    <script type="text/javascript">
-        function _(el) {
-        return document.getElementById(el);
-        }
-
-        function uploadFile() {
-        var file = _("uploaded_file").files[0];
-        // alert(file.name+" | "+file.size+" | "+file.type);
-        var formdata = new FormData();
-        formdata.append("uploaded_file", file);
-        var ajax = new XMLHttpRequest();
-        ajax.upload.addEventListener("progress", progressHandler, false);
-        ajax.addEventListener("load", completeHandler, false);
-        ajax.addEventListener("error", errorHandler, false);
-        ajax.addEventListener("abort", abortHandler, false);
-        ajax.open("POST", "file_upload_parser.php");
-        ajax.send(formdata);
-        }
-
-        function progressHandler(event) {
-        _("loaded_n_total").innerHTML = "Uploaded " + event.loaded + " bytes of " + event.total;
-        var percent = (event.loaded / event.total) * 100;
-        _("progressBar").value = Math.round(percent);
-        _("status").innerHTML = Math.round(percent) + "% uploaded... please wait";
-        }
-
-        function completeHandler(event) {
-        _("status").innerHTML = event.target.responseText;
-        _("progressBar").value = 100; //wil clear progress bar after successful upload
-        }
-
-        function errorHandler(event) {
-        _("status").innerHTML = "Upload Failed";
-        }
-
-        function abortHandler(event) {
-        _("status").innerHTML = "Upload Aborted";
-        }        
-    </script>
+            <input type="submit" class="form-control btn-success" value="Envoyer">
+        </form>
+        <div class="col-lg-2"></div>
+        <div class="box_container col-lg-5">
+            <div class="before_upload">
+                <p>Le téléchargement débutera au clique sur le bouton "Envoyer"</p>
+            </div>
+            <div class="uploading">
+                <progress id="progressBar" class="progress progress-bar progress-bar-striped progress-bar-animated bg-warning"  value="0" max="100" style="width:100%"></progress>
+                <h3 id="status"></h3>
+                <p id="loaded_n_total"></p>
+            </div>
+            <div class="upload success">
+                <h2>Upload réussie</h2>
+            </div>
+        </div>
+    </div>
+    <script src="assets/js/main.js" type="text/javascript"></script>
 {% endblock %}

@@ -1,7 +1,7 @@
 {% extends "base.html.twig" %} 
 {% block content %}
     <p>Nom de fichier : {{ file }}</p>
-    <a href="upload/{{ file }}" download="{{ file }}">Télécharger</a><br>
+    <a class="btn-success" href="upload/{{ file }}" download="{{ file }}">Télécharger</a><br>
     <p>Le message de l'uploadeur: {{ message }}</p>
-    <a href="../delete/{{ idFile }}">supprimer le fichier</a>
+    <a class="btn-success" href="../delete/{{ idFile }}">supprimer le fichier</a>
 {% endblock %}

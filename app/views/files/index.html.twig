@@ -8,7 +8,7 @@
 
             <fieldset id="conteneurFile">
             <input id="input_text_file" name="uploaded_file" class="inputText" readonly="readonly" type="text" placeholder="Nom du fichier..."/>
-            <input onmousedown="return false" onkeydown="return false" class="inputFile" onchange="document.getElementById('input_text_file').value = this.value; uploadFile()" type="file" name="uploaded_file" id="uploaded_file"/> 
+            <input onmousedown="return false" onkeydown="return false" class="inputFile" onchange="document.getElementById('input_text_file').value = this.value; uploadFile()" type="file" name="uploaded_file" id="uploaded_file" required/> 
             <span>Parcourir</span> 
             </fieldset>
             

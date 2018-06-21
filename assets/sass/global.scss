@@ -10,10 +10,6 @@ img{
     width: 40%;
 }
 
-.lolgo{
-    display: none;
-}
-
 .box_container{
     background: $white;
     box-shadow: 2px 2px 5px black, -2px -2px 5px black;
@@ -73,6 +69,24 @@ input{
 .row{
     margin-top: 10%;
 }
+
+.download{
+    text-align: center;
+    font-size: 30px;
+    margin-top: 5%;
+}
+
+.desti-page{
+  color: white;
+}
+
+.btn-success{
+  width: 25%;
+  margin-bottom: 50px;
+  font-family: Arial, sans-serif;
+  font-variant: small-caps;
+}
+
 @include media-breakpoint-down(md) {
   .box_container {
     display: none;
@@ -100,6 +114,14 @@ input{
   .lolgo{
     display: block;
   }
-}
+  
+  .download{
+    font-size: 18px;
+  }
+  
+  .btn-success{
+    width: 40%;
+  }
 
+}
 

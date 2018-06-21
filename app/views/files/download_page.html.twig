@@ -1,8 +1,10 @@
 {% extends "base.html.twig" %} 
-{% block content %}
-    <center><img class="lolgo" src="../assets/img/Logo.svg" alt="logo" style="width:400px;"></center>
-    <p>Nom de fichier : {{ file }}</p>
-    <a class="btn-success" href="../../upload/{{ file }}" download="{{ file }}">Télécharger</a><br>
-    <p>Le message de l'uploadeur: {{ message }}</p>
-    <a class="btn-success" href="../delete/{{ idFile }}">supprimer le fichier</a>
+{% block content %} 
+    <div class="download">
+        <center><img class="lolgo" src="{{ url('assets/img/Logo.svg') }}" alt="logo" style="width:400px;"></center>
+        <p>Nom de fichier : {{ file }}</p>
+        <button class="btn-success"><a class="desti-page" href="{{ url('upload/') }}{{ file }}" download="{{ file }}">Télécharger</a><br></button>
+        <p>Le message de l'uploadeur: {{ message }}</p>
+        <button class="btn-success"><a class="desti-page" href="../delete/{{ idFile }}">supprimer le fichier</a></button>
+    </div>
 {% endblock %}

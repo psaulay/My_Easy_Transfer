@@ -42,6 +42,7 @@ function abortHandler(event) {
 /* disparition divs */
 
 function changer() {
+    document.getElementsByClassName('box_container')[0].style.display = 'block';
     if (document.getElementById('1').style.display != 'none'){
         document.getElementById('1').style.display = 'none';
         document.getElementById('loading').style.display = 'block';
@@ -50,8 +51,4 @@ function changer() {
         document.getElementById('1').style.display = 'block';
     }
 
-
-
-
-    
-    }
+}

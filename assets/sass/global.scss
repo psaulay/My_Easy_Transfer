@@ -1,20 +1,30 @@
 body {
-    background: url(../img/background.jpg);
-    background-size: fixed;
-    background-repeat: no-repeat;
+    background: url(../img/background.jpg) no-repeat center fixed;
+    background-size: cover;
     font-family: Arial, sans-serif;
     font-variant: small-caps;
+    overflow: hidden;
 }
 
 img{
     width: 40%;
 }
 
+.lolgo{
+    display: none;
+}
+
 .box_container{
     background: $white;
     box-shadow: 2px 2px 5px black, -2px -2px 5px black;
     text-align: center;
-} 
+}
+
+.boxcontainer_success{
+    background: $white;
+    box-shadow: 2px 2px 5px black, -2px -2px 5px black;
+    text-align: center;
+}
 
 .btn-success{
 	background-color: $red;
@@ -59,4 +69,37 @@ input{
 #conteneurFile span{
     color: $white;
 }
+
+.row{
+    margin-top: 10%;
+}
+@include media-breakpoint-down(md) {
+  .box_container {
+    display: none;
+    position: absolute;
+    background: url(../img/background.jpg) no-repeat center fixed;
+    background-size: cover;
+    height: 147%;
+    box-shadow: none;
+  }
+   
+  .container{
+    position: relative;
+  }
+    
+  .boxcontainer_success{
+    display: block;
+    position: absolute;
+    background: url(../img/background.jpg) no-repeat center fixed;
+    background-size: cover;
+    height: 163%;
+    box-shadow: none;
+    margin-top: -22%;
+  }
+  
+  .lolgo{
+    display: block;
+  }
+}
+
 

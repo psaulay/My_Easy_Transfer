@@ -21,8 +21,11 @@
         </form>
         <div class="col-lg-2"></div>
         <div id="changeTest" class="box_container col-lg-5">
-            <div id="1">
-                <p>Le téléchargement débutera au clique sur le bouton "Envoyer"</p>
+            <div id="success">
+                <h2>Fichier transféré avec succès</h2>
+                <center><img src="../assets/img/letter.svg"></img></center>
+                <p> Lien du fichier: </p>
+                <a href="{{ url('files/download_page/') }}{{ idFile }}">{{ url('files/download_page/') }}{{ idFile }}</a>
             </div>
             <div id="loading" style="display: none;">
                 <div id="progressBar" class="progress progress-bar progress-bar-striped progress-bar-animated bg-warning"  value="0" max="100" style="width:100%">

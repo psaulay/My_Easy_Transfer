@@ -38,6 +38,21 @@ class FileController extends Controller {
         ]);
     }
 
+    public function success($idFile) 
+    {
+        // requete pour recuperer l'objet file
+        $file = File::findOne([
+            'random_id' => $idFile,
+        ]);
+        $filebis = (array) $file;
+        //var_dump($category); die();
+
+        echo $this->twig->render('files/success.html.twig', [
+            'file' => $filebis["file_name"],
+            'idFile' => $idFile,
+        ]);
+    }
+
 
         
     /**
@@ -130,6 +145,6 @@ class FileController extends Controller {
         ]);
         
 
-        $this->url->redirect('');
+        $this->url->redirect('success/'.$file->random_id);
     }
 }

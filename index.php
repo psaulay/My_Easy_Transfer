@@ -4,8 +4,11 @@ session_start();
 
 require_once "vendor/autoload.php";
 
+
 $dotenv = new Dotenv\Dotenv(__DIR__);
 $dotenv->load();
+
+
 
 if ($_ENV['APP_DEBUG']) {
     ini_set('display_errors', 1);

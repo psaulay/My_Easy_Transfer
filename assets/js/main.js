@@ -1,7 +1,3 @@
-$(function() {
-    // user/getTimer
-})
-
 // Functions progress bar
 
 function _(el) {
@@ -41,3 +37,21 @@ function errorHandler(event) {
 function abortHandler(event) {
     _("status").innerHTML = "Upload Aborted";
 }    
+
+
+/* disparition divs */
+
+function changer() {
+    if (document.getElementById('1').style.display != 'none'){
+        document.getElementById('1').style.display = 'none';
+        document.getElementById('loading').style.display = 'block';
+    } else {
+        document.getElementById('loading').style.display = 'none';
+        document.getElementById('1').style.display = 'block';
+    }
+
+
+
+
+    
+    }

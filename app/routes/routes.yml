@@ -18,3 +18,7 @@
     - /file
     - /file/
   controller: Controllers\FileController::index
+
+- path:
+    - /success/(\d+)
+  controller: Controllers\FileController::success

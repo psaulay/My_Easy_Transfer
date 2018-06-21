@@ -74,32 +74,33 @@ input{
     margin-top: 10%;
 }
 @include media-breakpoint-down(md) {
-  .box_container {
-    display: none;
-    position: absolute;
-    background: url(../img/background.jpg) no-repeat center fixed;
-    background-size: cover;
-    height: 147%;
-    box-shadow: none;
-  }
-   
-  .container{
-    position: relative;
-  }
+    .box_container {
+        display: none;
+        position: absolute;
+        background: url(../img/background.jpg) no-repeat center fixed;
+        background-size: cover;
+        height: 200%;
+        margin-top: -50%;
+        box-shadow: none;
+    }
+    .container{
+        position: relative;
+    }
     
-  .boxcontainer_success{
-    display: block;
-    position: absolute;
-    background: url(../img/background.jpg) no-repeat center fixed;
-    background-size: cover;
-    height: 163%;
-    box-shadow: none;
-    margin-top: -22%;
-  }
-  
-  .lolgo{
-    display: block;
-  }
+    .boxcontainer_success{
+        display: block;
+        position: absolute;
+        background: url(../img/background.jpg) no-repeat center fixed;
+        background-size: cover;
+        height: 200%;
+        margin-top: -50%;
+        box-shadow: none;
+        
+    }
+
+    .lolgo{
+        display: block;
+    }
 }
 
 

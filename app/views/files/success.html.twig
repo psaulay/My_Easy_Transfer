@@ -4,8 +4,6 @@
     <div class="row">
         <form  class="col-lg-5" method="POST" action="{{ url('file/add') }}" enctype="multipart/form-data" id="upload_form">
 
-            <!--<input type="file" name="uploaded_file" id="uploaded_file" onchange="uploadFile()">-->
-
             <fieldset id="conteneurFile">
             <input id="input_text_file" name="uploaded_file" class="inputText" readonly="readonly" type="text" placeholder="Nom du fichier..."/>
             <input onmousedown="return false" onkeydown="return false" class="inputFile" onchange="document.getElementById('input_text_file').value = this.value; uploadFile()" type="file" name="uploaded_file" id="uploaded_file"/> 

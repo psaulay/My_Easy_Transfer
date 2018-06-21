@@ -112,7 +112,7 @@ input{
     background-size: cover;
     height: 163%;
     box-shadow: none;
-    margin-top: -22%;
+    margin-top: 0%;
   }
   
   .lolgo{
@@ -125,6 +125,10 @@ input{
   
   .btn-success{
     width: 40%;
+  }
+  
+  .logo{
+    //display: none;
   }
 
 }

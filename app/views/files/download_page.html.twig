@@ -1,7 +1,7 @@
 {% extends "base.html.twig" %} 
 {% block content %} 
     <div class="download">
-        <center><img class="lolgo" src="{{ url('assets/img/Logo.svg') }}" alt="logo" style="width:400px;"></center>
+        <!--<center><img class="lolgo" src="{{ url('assets/img/Logo.svg') }}" alt="logo" style="width:400px;"></center>-->
         <p>Nom de fichier : {{ file }}</p>
         <button class="btn-success"><a class="desti-page" href="{{ url('upload/') }}{{ file }}" download="{{ file }}">Télécharger</a><br></button>
         <p>Le message de l'uploadeur: {{ message }}</p>

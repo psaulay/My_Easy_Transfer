@@ -22,15 +22,15 @@ img{
     text-align: center;
 }
 
-.btn-success{
-	background-color: $red;
-	border: none;
-	width: 50%;
-	margin: auto;
-}
 
-.btn-success:hover{
-	background-color: $redHover !important;
+
+.btn-danger{
+    margin: auto;
+    margin-top: 5%;
+    margin-bottom: 50px;
+    border-radius: 0;
+    font-family: Arial, sans-serif;
+    font-variant: small-caps;
 }
 
 .form-control{
@@ -50,13 +50,13 @@ input{
     opacity : 0; /* for !IE */
     filter : alpha(opacity=0); /* for IE */
     position : absolute;
-    width: 25%;
+    width: 35%;
     right : 0;
     top : 0;
 }
 #conteneurFile .inputText{
     border : none;
-    width: 65%;
+    width: 76%;
     font-variant: small-caps!important;
     padding: 0.375rem 0.75rem;
     background : $white;
@@ -64,6 +64,7 @@ input{
 
 #conteneurFile span{
     color: $white;
+    padding-left: 2%;
 }
 
 .row{
@@ -80,11 +81,21 @@ input{
     color: white;
 }
 
-.btn-success{
-    width: 25%;
-    margin-bottom: 50px;
-    font-family: Arial, sans-serif;
-    font-variant: small-caps;
+.logo{
+    width: 400px;
+}
+.waiting_text{
+    margin: 20%;
+    margin-top: 35%;
+    font-size: 1.25vW;
+}
+
+.waiting_bar{
+    margin-top: 40%;
+}
+
+#success{
+    margin-top: 5%;
 }
 
 @include media-breakpoint-down(md) {
@@ -111,6 +122,26 @@ input{
         box-shadow: none;
         
     }
+    a.link{
+        width: 80%;
+    }
+    .lolgo{
+        display: block;
+    }
+    
+    .download{
+        font-size: 18px;
+    }
+
+    .boxcontainer_success{
+        display: block;
+        position: absolute;
+        background: url(../img/background.jpg) no-repeat center fixed;
+        background-size: cover;
+        height: 163%;
+        box-shadow: none;
+        margin-top: 0%;
+    }
     
     .lolgo{
         display: block;
@@ -124,5 +155,14 @@ input{
         width: 40%;
     }
     
+    .logo{
+        width: 300px;
+    }
+
+    #conteneurFile .inputText{
+        
+        width: 65%;
+        
+    }    
 }
 

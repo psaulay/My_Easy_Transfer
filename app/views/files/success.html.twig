@@ -15,16 +15,15 @@
 
             <input type="text" name="creator_message" class="form-control" placeholder="Votre message...">
 
-            <input type="submit" id="btnClick" class="form-control btn-success"  onclick="changer()" value="Envoyer">
+            <center><input type="submit" id="btnClick" class="btn btn-danger"  onclick="changer()" value="Envoyer"></input></center>
         </form>
         <div class="col-lg-2"></div>
         <div id="changeTest" class="boxcontainer_success col-lg-5">
             <div id="success">
-                <center><img class="lolgo" src="{{url('assets/img/Logo.svg')}}" alt="logo" style="width:400px;"></center>
                 <h2>Fichier transféré avec succès</h2>
                 <center><img src="{{url('/assets/img/letter.svg')}}"></img></center>
                 <p> Lien du fichier: </p>
-                <a href="{{ url('files/download_page/') }}{{ idFile }}">{{ url('files/download_page/') }}{{ idFile }}</a>
+                <a class="link" href="{{ url('files/download_page/') }}{{ idFile }}">{{ url('files/download_page/') }}<br>{{ idFile }}</a>
             </div>
             <div id="loading" style="display: none;">
                 <div id="progressBar" class="progress progress-bar progress-bar-striped progress-bar-animated bg-warning"  value="0" max="100" style="width:100%">

@@ -17,16 +17,15 @@
 
             <input type="text" name="creator_message" class="form-control" placeholder="Votre message...">
 
-            <input type="submit" id="btnClick" class="form-control btn-success"  onclick="changer()" value="Envoyer">
+            <center><input type="submit" id="btnClick" class="btn btn-danger"  onclick="changer()" value="Envoyer"></input></center>
         </form>
         <div class="col-lg-2"></div>
         <div id="changeTest" class="box_container col-lg-5">
             <div id="1">
-                <p>Le téléchargement débutera au clique sur le bouton "Envoyer"</p>
+                <p class="waiting_text">Le téléchargement débutera au clique sur le bouton "Envoyer"</p>
             </div>
             <div id="loading" style="display: none;">
-                <img src="{{url('assets/img/Logo.svg')}}" alt="logo" style="width: 400px;">
-                <div id="progressBar" class="progress progress-bar progress-bar-striped progress-bar-animated bg-warning"  value="0" max="100" style="width:100%">
+                <div id="progressBar" class="waiting_bar progress progress-bar progress-bar-striped progress-bar-animated bg-warning"  value="0" max="100" style="width:100%">
                 </div>
                 <h3 id="status"></h3>
                 <p id="loaded_n_total"></p>

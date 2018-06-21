@@ -50,5 +50,4 @@ function changer() {
         document.getElementById('loading').style.display = 'none';
         document.getElementById('1').style.display = 'block';
     }
-
 }

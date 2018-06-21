@@ -87,6 +87,10 @@ input{
   font-variant: small-caps;
 }
 
+.lolgo{
+  display: none;
+}
+
 @include media-breakpoint-down(md) {
   .box_container {
     display: none;
